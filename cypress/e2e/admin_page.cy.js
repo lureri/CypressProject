@@ -39,7 +39,7 @@ describe('Admin page', () => {
         cy.xpath('.//div[div[label[text()="Username"]]]//input').type('Luis5')
         cy.get('[type=submit]').click()
         cy.get('i[class="oxd-icon bi-trash"]').click()
-
+        cy.get('i[class="oxd-icon bi-trash oxd-button-icon"]').click()
         cy.get('div[class="oxd-toast-start"]').should('be.visible')
     })
 

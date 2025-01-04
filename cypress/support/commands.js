@@ -10,18 +10,7 @@
 //
 //
 // -- This is a parent command --
-import '@cypress/xpath';
-
-Cypress.Commands.add('login', (username, password) => {
-
-    cy.visit('/')
-    cy.get('[name=username]').type(username);
-    cy.get('[name=password]').type(password);
-    cy.get('[type=submit]').should('be.enabled');
-    cy.get('[type=submit]').click();
-
-  })
-
+// Cypress.Commands.add('login', (email, password) => { ... })
 //
 //
 // -- This is a child command --
@@ -34,3 +23,13 @@ Cypress.Commands.add('login', (username, password) => {
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add ('login',(username, password)=>{
+    cy.visit('/')
+    cy.get('[name=username]').type(username);
+    cy.get('[name=password]').type(password);
+    cy.get('[type=submit]').should('be.enabled');
+    cy.get('[type=submit]').click();
+}
+)
+
+import '@cypress/xpath';

@@ -23,13 +23,13 @@ When(/^I click on "([^"]*)" button$/, function (button) {
     else if (button == "Edit"){
         cy.xpath('.//div[div[label[text()="Username"]]]//input').type(user)
         cy.get('[type=submit]').click()
-        cy.xpath('.//div[div[div[contains(text(),user)]]]//i[@class="oxd-icon bi-pencil-fill"]').click()
+        cy.xpath('.//div[div[div[contains(text(),'+user+')]]]//i[@class="oxd-icon bi-pencil-fill"]').click()
     }
 
     else if (button == "Delete"){
         cy.xpath('.//div[div[label[text()="Username"]]]//input').type(user)
         cy.get('[type=submit]').click()
-        cy.xpath('.//div[div[div[contains(text(),user)]]]//i[@class="oxd-icon bi-trash"]').click()
+        cy.xpath('.//div[div[div[contains(text(),'+user+')]]]//button//i[@class="oxd-icon bi-trash"]').click()
         cy.xpath('.//div//i[@class="oxd-icon bi-trash oxd-button-icon"]').click()
     }
 });
